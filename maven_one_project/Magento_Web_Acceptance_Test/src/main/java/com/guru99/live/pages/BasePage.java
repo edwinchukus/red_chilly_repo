@@ -1,6 +1,6 @@
 package com.guru99.live.pages;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 
 public class BasePage {
@@ -13,11 +13,13 @@ public class BasePage {
 		this.driver = driver;
 	}
 	
+	
 	public void setupTest() {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.navigate().to("http://live.guru99.com/");
 	}
+	
 
 	public void cleanUpTest() {
 		driver.quit();

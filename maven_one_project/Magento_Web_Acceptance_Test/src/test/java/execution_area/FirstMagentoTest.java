@@ -21,7 +21,7 @@ public class FirstMagentoTest {
 	private MyDashboardPage myDashboardPage;
 	
 	@Before 
-	public void setUp() {
+	public void setUp() { 
 //		System.setProperty("webdriver.chrome.driver", "");
 		WebDriver driver = new ChromeDriver();
 		this.basePage = new BasePage(driver);
@@ -38,6 +38,12 @@ public class FirstMagentoTest {
 		myDashboardPage.validateLogin("Hello, Donald Jonathan!");		
 	}
 	
+	
+	@Test 
+	public void magentoSearchTVTest() { 
+		System.out.println("Search for LG LCD TV");
+		System.out.println("Validate that LG LCD TV exist");
+	}
 	
 	@After
 	public void tearDown() {
