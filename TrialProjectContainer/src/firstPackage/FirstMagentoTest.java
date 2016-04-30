@@ -18,8 +18,9 @@ public class FirstMagentoTest {
 	private MyAccountPage myAccountPage;
 	private MyDashboardPage myDashboardPage;
 	
-	@Before
+	@Before 
 	public void setUp() {
+		System.setProperty("webdriver.chrome.driver", "");
 		WebDriver driver = new ChromeDriver();
 		this.basePage = new BasePage(driver);
 		this.homePage = new HomePage(driver);

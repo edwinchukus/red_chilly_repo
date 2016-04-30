@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="edwin"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/TrainCentre/traincentre_gitlab_repo/TrainSoftDump/BatchA2016/selenium-2.53.0/libs/apache-mime4j-0.6.jar"/>
 	<classpathentry kind="lib" path="C:/TrainCentre/traincentre_gitlab_repo/TrainSoftDump/BatchA2016/selenium-2.53.0/libs/bsh-2.0b4.jar"/>
