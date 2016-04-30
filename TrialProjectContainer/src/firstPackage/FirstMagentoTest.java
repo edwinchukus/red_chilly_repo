@@ -20,7 +20,7 @@ public class FirstMagentoTest {
 	
 	@Before 
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", "");
+		System.setProperty("webdriver.chrome.driver", "C:\\TrainCentre\\traincentre_gitlab_repo\\TrainSoftDump\\BatchA2016\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		this.basePage = new BasePage(driver);
 		this.homePage = new HomePage(driver);
@@ -35,6 +35,7 @@ public class FirstMagentoTest {
 		myAccountPage.loginWith("234dotus@gmail.com", "password123");
 		myDashboardPage.validateLogin("Hello, Donald Jonathan!");		
 	}
+	
 	
 	
 	@After
