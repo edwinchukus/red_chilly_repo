@@ -1,4 +1,4 @@
-package execution_area;
+package execution_area.release_one;
 
 import org.junit.After;
 import org.junit.Before;
@@ -13,14 +13,14 @@ import com.guru99.live.pages.MyDashboardPage;
 
 
 
-public class FirstMagentoTest {
+public class LoginTest {
 
 	private BasePage basePage;
 	private HomePage homePage;
 	private MyAccountPage myAccountPage;
 	private MyDashboardPage myDashboardPage;
 	
-	@Before 
+	@Before // Pre Condition 
 	public void setUp() { 
 //		System.setProperty("webdriver.chrome.driver", "");
 		WebDriver driver = new ChromeDriver();
@@ -45,7 +45,10 @@ public class FirstMagentoTest {
 		System.out.println("Validate that LG LCD TV exist");
 	}
 	
-	@After
+	
+	
+	
+	@After // Post Condition 
 	public void tearDown() {
 		basePage.cleanUpTest();
 	}

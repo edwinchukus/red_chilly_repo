@@ -13,6 +13,11 @@ public class HomePage extends BasePage{
 	public void goToMyAccount() {
 		driver.findElement(By.xpath("//*[@id='top']/body/div[1]/div/div[3]/div/div[4]/ul/li[1]/a")).click();
 	}
+
+
+	public void goToOrderAndReturn() {
+		driver.findElement(By.xpath("//*[@id='top']/body/div/div/div[3]/div/div[4]/ul/li[2]/a")).click();		
+	}
 	
 	
 
