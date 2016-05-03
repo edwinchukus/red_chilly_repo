@@ -11,7 +11,7 @@ public class OrdersAndReturnsPage extends BasePage{
 		super(driver);
 	}
 
-	public void populateOrderInformation(String orderID, String customerLastName, String emailOrZip, String valueOfEmailOrZip) {
+	public OrdersAndReturnsPage populateOrderInformation(String orderID, String customerLastName, String emailOrZip, String valueOfEmailOrZip) {
 		driver.findElement(By.id("oar_order_id")).sendKeys(orderID);
 		driver.findElement(By.id("oar_billing_lastname")).sendKeys(customerLastName);
 		WebElement selectEmailOrZipElement = driver.findElement(By.id("quick_search_type_id"));
@@ -23,11 +23,12 @@ public class OrdersAndReturnsPage extends BasePage{
 			selectEmailOrZip.selectByVisibleText(emailOrZip);
 			driver.findElement(By.id("oar_zip")).sendKeys(valueOfEmailOrZip);
 		}
+		return new OrdersAndReturnsPage(driver);
 	}
 
-	public void searchForOrdersAndReturns() {
+	public OrderInformationPage searchForOrdersAndReturns() {
 		driver.findElement(By.xpath("//*[@id='oar_widget_orders_and_returns_form']/div[2]/button")).click();		
-
+		return new OrderInformationPage(driver);
 	}
 	
 	

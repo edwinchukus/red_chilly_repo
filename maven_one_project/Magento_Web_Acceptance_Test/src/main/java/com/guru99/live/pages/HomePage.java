@@ -15,8 +15,9 @@ public class HomePage extends BasePage{
 	}
 
 
-	public void goToOrderAndReturn() {
-		driver.findElement(By.xpath("//*[@id='top']/body/div/div/div[3]/div/div[4]/ul/li[2]/a")).click();		
+	public OrdersAndReturnsPage goToOrderAndReturn() {
+		driver.findElement(By.xpath("//*[@id='top']/body/div/div/div[3]/div/div[4]/ul/li[2]/a")).click();	
+		return new OrdersAndReturnsPage(driver);
 	}
 	
 	

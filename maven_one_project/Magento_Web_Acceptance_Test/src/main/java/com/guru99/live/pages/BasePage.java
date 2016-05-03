@@ -14,10 +14,11 @@ public class BasePage {
 	}
 	
 	
-	public void setupTest() {
+	public HomePage setupTest() {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.navigate().to("http://live.guru99.com/");
+		return new HomePage(driver);
 	}
 	
 

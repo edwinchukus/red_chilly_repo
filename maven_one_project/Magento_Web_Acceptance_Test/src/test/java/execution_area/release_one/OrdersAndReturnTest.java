@@ -29,7 +29,7 @@ public class OrdersAndReturnTest {
 		this.homePage = new HomePage(driver);
 		this.ordersAndReturnsPage = new OrdersAndReturnsPage(driver);
 		this.orderInformationPage = new OrderInformationPage(driver);
-		basePage.setupTest();
+		homePage = basePage.setupTest();
 	}
 	
 	
@@ -41,9 +41,9 @@ public class OrdersAndReturnTest {
 		String valueEmailOrZip = "234dotus@gmail.com";
 		
 		
-		homePage.goToOrderAndReturn();
-		ordersAndReturnsPage.populateOrderInformation(orderID, customerName,emailOrZip,valueEmailOrZip);
-		ordersAndReturnsPage.searchForOrdersAndReturns();
+		ordersAndReturnsPage = homePage.goToOrderAndReturn();
+		ordersAndReturnsPage = ordersAndReturnsPage.populateOrderInformation(orderID, customerName,emailOrZip,valueEmailOrZip);
+		orderInformationPage = ordersAndReturnsPage.searchForOrdersAndReturns();
 		Assert.assertTrue("Does not contain Pending", orderInformationPage.validateStatus());	
 	}
 	
