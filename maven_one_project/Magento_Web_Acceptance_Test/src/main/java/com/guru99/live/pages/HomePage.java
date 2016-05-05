@@ -5,20 +5,26 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage extends BasePage{
 
+	private By myAccountField = By.xpath("//*[@id='top']/body/div[1]/div/div[3]/div/div[4]/ul/li[1]/a");
+	private By ordersAndReturnsField = By.xpath("//*[@id='top']/body/div/div/div[3]/div/div[4]/ul/li[2]/a");
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
 	
 	
-	public void goToMyAccount() {
-		driver.findElement(By.xpath("//*[@id='top']/body/div[1]/div/div[3]/div/div[4]/ul/li[1]/a")).click();
+	public MyAccountPage goToMyAccount() {
+		driver.findElement(myAccountField).click();
+		return new MyAccountPage(driver);
 	}
 
 
 	public OrdersAndReturnsPage goToOrderAndReturn() {
-		driver.findElement(By.xpath("//*[@id='top']/body/div/div/div[3]/div/div[4]/ul/li[2]/a")).click();	
+		driver.findElement(ordersAndReturnsField).click();	
 		return new OrdersAndReturnsPage(driver);
 	}
+	
+	
 	
 	
 

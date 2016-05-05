@@ -18,17 +18,11 @@ public class OrdersAndReturnTest {
 	
 	private BasePage basePage;
 	private HomePage homePage;
-	private OrdersAndReturnsPage ordersAndReturnsPage;
-	private OrderInformationPage orderInformationPage;
 	
 	@Before // Pre Condition 
 	public void setUp() { 
-//		System.setProperty("webdriver.chrome.driver", "");
 		WebDriver driver = new ChromeDriver();
 		this.basePage = new BasePage(driver);
-		this.homePage = new HomePage(driver);
-		this.ordersAndReturnsPage = new OrdersAndReturnsPage(driver);
-		this.orderInformationPage = new OrderInformationPage(driver);
 		homePage = basePage.setupTest();
 	}
 	
@@ -41,10 +35,11 @@ public class OrdersAndReturnTest {
 		String valueEmailOrZip = "234dotus@gmail.com";
 		
 		
-		ordersAndReturnsPage = homePage.goToOrderAndReturn();
-		ordersAndReturnsPage = ordersAndReturnsPage.populateOrderInformation(orderID, customerName,emailOrZip,valueEmailOrZip);
-		orderInformationPage = ordersAndReturnsPage.searchForOrdersAndReturns();
-		Assert.assertTrue("Does not contain Pending", orderInformationPage.validateStatus());	
+		OrderInformationPage orderInformationPage = homePage
+				.goToOrderAndReturn()
+				.populateOrderInformation(orderID, customerName,emailOrZip,valueEmailOrZip)
+				.searchForOrdersAndReturns();
+		Assert.assertTrue("Does not contain Pending", orderInformationPage.validateStatus());		
 	}
 	
 	@Test
@@ -55,9 +50,10 @@ public class OrdersAndReturnTest {
 		String valueEmailOrZip = "e13 0qe";
 		
 		
-		homePage.goToOrderAndReturn();
-		ordersAndReturnsPage.populateOrderInformation(orderID, customerName,emailOrZip,valueEmailOrZip);
-		ordersAndReturnsPage.searchForOrdersAndReturns();
+		OrderInformationPage orderInformationPage = homePage
+				.goToOrderAndReturn()
+				.populateOrderInformation(orderID, customerName,emailOrZip,valueEmailOrZip)
+				.searchForOrdersAndReturns();
 		Assert.assertTrue("Does not contain Pending", orderInformationPage.validateStatus());	
 	}
 	
@@ -69,9 +65,10 @@ public class OrdersAndReturnTest {
 		String valueEmailOrZip = "e13 0qe";
 		
 		
-		homePage.goToOrderAndReturn();
-		ordersAndReturnsPage.populateOrderInformation(orderID, customerName,emailOrZip,valueEmailOrZip);
-		ordersAndReturnsPage.searchForOrdersAndReturns();
+		OrderInformationPage orderInformationPage = homePage
+				.goToOrderAndReturn()
+				.populateOrderInformation(orderID, customerName,emailOrZip,valueEmailOrZip)
+				.searchForOrdersAndReturns();
 		Assert.assertTrue("Does not contain Pending", orderInformationPage.validateStatus());	
 	}
 	
@@ -83,11 +80,11 @@ public class OrdersAndReturnTest {
 		String valueEmailOrZip = "KT17 4NR";
 		
 		
-		homePage.goToOrderAndReturn();
-		ordersAndReturnsPage.populateOrderInformation(orderID, customerName,emailOrZip,valueEmailOrZip);
-		ordersAndReturnsPage.searchForOrdersAndReturns();
-//		Assert.assertTrue("Does not contain Pending", !orderInformationPage.validateStatus());
-		Assert.assertSame(true, !orderInformationPage.validateStatus());
+		OrderInformationPage orderInformationPage = homePage
+				.goToOrderAndReturn()
+				.populateOrderInformation(orderID, customerName,emailOrZip,valueEmailOrZip)
+				.searchForOrdersAndReturns();
+		Assert.assertTrue("Does not contain Pending", !orderInformationPage.validateStatus());	
 	}
 	
 	

@@ -17,26 +17,26 @@ public class LoginTest {
 
 	private BasePage basePage;
 	private HomePage homePage;
-	private MyAccountPage myAccountPage;
-	private MyDashboardPage myDashboardPage;
+
 	
-	@Before // Pre Condition 
+	@Before // Pre-Condition 
 	public void setUp() { 
-//		System.setProperty("webdriver.chrome.driver", "");
 		WebDriver driver = new ChromeDriver();
 		this.basePage = new BasePage(driver);
-		this.homePage = new HomePage(driver);
-		this.myAccountPage = new MyAccountPage(driver);
-		this.myDashboardPage = new MyDashboardPage(driver);
-		basePage.setupTest();
+		homePage = basePage.setupTest();
 	}
+	
+	
 	
 	@Test
 	public void magentoLoginTest() {
-		homePage.goToMyAccount();
-		myAccountPage.loginWith("234dotus@gmail.com", "password123");
-		myDashboardPage.validateLogin("Hello, Donald Jonathan!");		
+		homePage
+		.goToMyAccount()
+		.loginWith("234dotus@gmail.com", "password123")
+		.validateLogin("Hello, Donald Jonathan!");	
 	}
+	
+	
 	
 	
 	@Test 
