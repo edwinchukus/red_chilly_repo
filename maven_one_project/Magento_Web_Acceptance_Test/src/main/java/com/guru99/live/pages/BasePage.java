@@ -23,7 +23,11 @@ public class BasePage {
 	
 
 	public void cleanUpTest() {
-		driver.quit();
+		if(driver!= null){
+			driver.quit();
+		}else{
+			System.out.println("Driver was closed earlier");
+		}
 	}
 	
 	

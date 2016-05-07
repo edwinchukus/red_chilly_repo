@@ -44,13 +44,7 @@ public class LoginTest {
 	
 	
 	
-	@Test 
-	public void magentoSearchTVTest() { 
-		homePage.searchItemPage();
-		myDashBoardPage.validateLogin("search");
 
-		
-	}
 	
 	
 	

@@ -7,6 +7,8 @@ public class HomePage extends BasePage{
 
 	private By myAccountField = By.xpath("//*[@id='top']/body/div[1]/div/div[3]/div/div[4]/ul/li[1]/a");
 	private By ordersAndReturnsField = By.xpath("//*[@id='top']/body/div/div/div[3]/div/div[4]/ul/li[2]/a");
+	private By searchField = By.id("search");
+	private By searchButtonField = By.xpath("//*[@id='search_mini_form']/div[1]/button");
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -25,10 +27,10 @@ public class HomePage extends BasePage{
 	}
 
 
-	public void searchItemPage() {
-		driver.findElement(By.id("search")).sendKeys("lg lcd tv");
-	    driver.findElement(By.xpath("//*[@id='search_mini_form']/div[1]/button")).click();
-		
+	public SearchResultPage searchItemPage(String itemToBeSearched) {
+		driver.findElement(searchField).sendKeys(itemToBeSearched);
+	    driver.findElement(searchButtonField).click();
+	    return new SearchResultPage(driver);
 	}
 	
 	
