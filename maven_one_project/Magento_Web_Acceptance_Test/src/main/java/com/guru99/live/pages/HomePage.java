@@ -23,6 +23,13 @@ public class HomePage extends BasePage{
 		driver.findElement(ordersAndReturnsField).click();	
 		return new OrdersAndReturnsPage(driver);
 	}
+
+
+	public void searchItemPage() {
+		driver.findElement(By.id("search")).sendKeys("lg lcd tv");
+	    driver.findElement(By.xpath("//*[@id='search_mini_form']/div[1]/button")).click();
+		
+	}
 	
 	
 	
