@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.guru99.live.pages.BasePage;
 import com.guru99.live.pages.HomePage;
@@ -17,12 +18,16 @@ public class LoginTest {
 
 	private BasePage basePage;
 	private HomePage homePage;
+	private MyDashboardPage myDashBoardPage;
+	private MyAccountPage myAccountPage;
 
 	
 	@Before // Pre-Condition 
 	public void setUp() { 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new FirefoxDriver();
 		this.basePage = new BasePage(driver);
+		this.myAccountPage = new MyAccountPage(driver);
+		this.myDashBoardPage = new MyDashboardPage(driver);
 		homePage = basePage.setupTest();
 	}
 	
@@ -32,8 +37,8 @@ public class LoginTest {
 	public void magentoLoginTest() {
 		homePage
 		.goToMyAccount()
-		.loginWith("234dotus@gmail.com", "password123")
-		.validateLogin("Hello, Donald Jonathan!");	
+		.loginWith("234dotus@gmail.com", "password123");
+		
 	}
 	
 	
@@ -41,16 +46,18 @@ public class LoginTest {
 	
 	@Test 
 	public void magentoSearchTVTest() { 
-		System.out.println("Search for LG LCD TV");
-		System.out.println("Validate that LG LCD TV exist");
+		homePage.searchItemPage();
+		myDashBoardPage.validateLogin("search");
+
+		
 	}
 	
 	
 	
 	
-	@After // Post Condition 
-	public void tearDown() {
-		basePage.cleanUpTest();
+//	@After // Post Condition 
+//	public void tearDown() {
+//		basePage.cleanUpTest();
 	}
 	
-}
+//}
