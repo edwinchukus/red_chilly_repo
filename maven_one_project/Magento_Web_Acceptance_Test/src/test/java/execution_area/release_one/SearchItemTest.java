@@ -32,7 +32,6 @@ public class SearchItemTest {
 		
 		boolean processedResult = homePage.searchItemPage(itemToBeSearched).validateSearchedItem(itemToBeSearched);
 		Assert.assertTrue("Does not contain "+itemToBeSearched, processedResult);	
-		
 	}
 	
 	@After // Post Condition 
